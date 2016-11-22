@@ -21,6 +21,11 @@ namespace EmailSaveAndSender
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
+
+        internal Task SendEmailAsync(string to, string message, string subject)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class SmsService : IIdentityMessageService
