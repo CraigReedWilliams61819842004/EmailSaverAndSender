@@ -12,12 +12,12 @@ namespace Service.EmailService
     {
         public async Task<bool> SendEmailAsync(string emailTo, string mailbody, string subject)
         {
-            var from = new MailAddress("abc@abc.com");
+            var from = new MailAddress("postmaster@sandbox3dc37d686fdb4cd3965384a893cf4e88.mailgun.org");
             var to = new MailAddress(emailTo);
 
             var useDefaultCredentials = true;
             var enableSsl = false;
-            var replyto = ""; // set here your email; 
+            var replyto = "crwtest1@gmail.com"; // set here your email; 
             var userName = string.Empty;
             var password = string.Empty;
             var port = 25;
@@ -36,7 +36,7 @@ namespace Service.EmailService
                 mail.Body = mailbody;
                 mail.IsBodyHtml = true;
 
-                mail.ReplyToList.Add(new MailAddress(replyto, "My Email"));
+                mail.ReplyToList.Add(new MailAddress(replyto, "crwtest1@gmail.com"));
                 mail.ReplyToList.Add(from);
                 mail.DeliveryNotificationOptions = DeliveryNotificationOptions.Delay |
                 DeliveryNotificationOptions.OnFailure |
